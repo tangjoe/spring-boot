@@ -7,9 +7,10 @@
     <artifactId>myproject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <!-- 1.8 if Java 1.8 -->
     <build>
       <plugins>
+
+        <!-- 1.8 if Java 1.8 -->
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-compiler-plugin</artifactId>
@@ -19,10 +20,13 @@
             <target>1.8</target>
           </configuration>
         </plugin>
+
+        <!-- Executable jars "fat jars" -->
         <plugin>
           <groupId>org.springframework.boot</groupId>
           <artifactId>spring-boot-maven-plugin</artifactId>
         </plugin>
+
       </plugins>
     </build>
 
