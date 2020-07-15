@@ -8,10 +8,14 @@ pipeline {
 
     stages {
         stage('Unit Test') {
-            sh 'mvn clean test'
+            steps {
+                sh 'mvn clean test'
+            }
         }
         stage('Build Fat Jars') {
-            sh 'mvn package'
+            steps {
+                sh 'mvn package'
+            }
         }
     }
 }
