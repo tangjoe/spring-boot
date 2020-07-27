@@ -1,19 +1,19 @@
 pipeline {
-    agent {
-        docker {
-            image 'maven:adoptopenjdk'
+    agent any
+
+    tools {
+        jdk 'jdk8'
+        maven 'maven3.6'
     }
 
     stages {
-        stage('Compile') {
+        stage('Unit Test') {
             steps {
-                echo "--- complile project ---"
                 sh 'mvn clean test'
             }
         }
         stage('Build Fat Jars') {
             steps {
-                echo "--- build fat jars ---"
                 sh 'mvn package'
             }
         }
