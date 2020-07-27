@@ -11,6 +11,7 @@ pipeline {
                 echo "--- complile project ---"
                 sh 'echo "hostname: " $(uname -a)'
                 sh 'mvn clean test'
+                sh 'sleep 60'
             }
         }
         stage('Build Fat Jars') {
