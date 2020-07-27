@@ -17,7 +17,7 @@ pipeline {
             steps {
                 script {
                     def pause = input(message: 'Wait for your input...',
-                                      parameters: [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Yes/No', name: 'Confirm'])
+                                      parameters: [[$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Yes/No', name: 'Confirm']])
                 }
             }
         }
