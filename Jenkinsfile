@@ -11,7 +11,14 @@ pipeline {
                 echo "--- complile project ---"
                 sh 'echo "hostname: " $(uname -a)'
                 sh 'mvn clean test'
-                sh 'sleep 60'
+            }
+        }
+        stage('Wait for input') {
+            steps {
+                script {
+                    def pause = input(message: 'Wait for your input...',
+                                      parameters: [$class: 'TextParameterDefinition', defaultValue: 'None', description: 'Yes/No', name: 'Confirm'])
+                }
             }
         }
         stage('Build Fat Jars') {
