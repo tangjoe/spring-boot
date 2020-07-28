@@ -29,7 +29,7 @@ pipeline {
         stage('Build docker image') {
             steps {
                 echo "--- buid docker images ---"
-                sh "docker build -t myproject:latest ."
+                sh "docker build -t hello:latest ."
             }
         }
     }

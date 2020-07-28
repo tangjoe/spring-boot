@@ -1,4 +1,5 @@
-FROM anapsix/alpine-java
-COPY target/myproject-0.0.1-SNAPSHOT.jar /home/myproject-0.0.1-SNAPSHOT.jar
-CMD ["java","-jar","/home/myproject-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8-jdk-alpine
+ARG JAR_FILE=target/*.jar
+COPY ${JAR_FILE} hello.jar
+CMD ["java","-jar","/hello.jar"]
 EXPOSE 8080
