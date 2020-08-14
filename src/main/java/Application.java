@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.*;
 @EnableAutoConfiguration
 public class Application {
 
+    int a=0,b=0.1,c;
+
     @RequestMapping("/")
     String home() {
         return "Hello World!";
