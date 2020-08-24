@@ -13,7 +13,12 @@ public class Application {
 
     @RequestMapping("/")
     String home() {
-        return "Hello World!";
+        return "Hello World from Joe !";
+    }
+
+    @RequestMapping("/health")
+    String health() {
+        return "Stay safe man ....";
     }
 
     public static void main(String[] args) throws Exception {
